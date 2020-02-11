@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Dependency directories
+node_modules
+package-lock.json
+
+# Optional npm cache directory
+.npm
+
+# vim
+.*.sw*
+Session.vim
+
+# Serverless
+.webpack
+.serverless
+
+# env
+env.yml
+.env
+
+# Jetbrains IDEs
+.idea
+
+.next
