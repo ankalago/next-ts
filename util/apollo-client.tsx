@@ -5,14 +5,14 @@ import {createHttpLink} from 'apollo-link-http';
 import fetch from 'isomorphic-unfetch';
 
 // Update the GraphQL endpoint to any instance of GraphQL that you like
-const GRAPHQL_URL = 'https://demo-apis-services.latamautos.com/vehicle-inventory/graphql';
+const GRAPHQL_URL = 'https://fwmbow4hvreapcc2ag7gwvfvhe.appsync-api.us-east-1.amazonaws.com/graphql';
 // const GRAPHQL_URL = 'https://api.graphql.jobs/';
 
 const link = createHttpLink({
     fetch, // Switches between unfetch & node-fetch for client & server.
     uri: GRAPHQL_URL,
-    fetchOptions: {
-        mode: 'no-cors'
+    headers: {
+        'x-api-key':'da2-afed2hrfdvflbnjbm6ls6xblpi'
     }
 });
 
