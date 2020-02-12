@@ -8,8 +8,8 @@ const IndexPage: NextPage<{ userAgent: string }> = ({userAgent}) => {
         <Layout title="Home | Next.js + TypeScript Example">
             <h1>Hello Next.js 👋</h1>
             <p>
-                <Link href="/about">
-                    <a>About</a>
+                <Link href="/catalogs">
+                    <a>Catalogos</a>
                 </Link>
             </p>
             <div>{userAgent}</div>
