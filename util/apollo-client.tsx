@@ -11,7 +11,9 @@ const GRAPHQL_URL = 'https://demo-apis-services.latamautos.com/vehicle-inventory
 const link = createHttpLink({
     fetch, // Switches between unfetch & node-fetch for client & server.
     uri: GRAPHQL_URL,
-    fetchOptions: { mode: 'no-cors' }
+    fetchOptions: {
+        mode: 'no-cors'
+    }
 });
 
 // Export a HOC from next-with-apollo
