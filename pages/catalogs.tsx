@@ -1,11 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import {useQuery} from '@apollo/react-hooks';
-import CATALOGS_QUERY, {Catalogs} from '../graphql/catalogs.query';
+import {getCatalogs} from '../graphql/vehicle-premium/query/getCatalogs';
+import {CatalogsQuery, CatalogsQueryVariables} from '../generated/schema';
 
 const CatalogsPage = () => {
     // Create a query hook
-    const {data, loading, error} = useQuery<Catalogs, any>(CATALOGS_QUERY);
+    const {data, loading, error} = useQuery<CatalogsQuery, CatalogsQueryVariables>(getCatalogs);
 
     if (loading) {
         return <p>Loading...</p>;
@@ -22,9 +23,9 @@ const CatalogsPage = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <ul>
-                {data?.getCatalogsQueryFunction.map(catalogs =>
-                    catalogs.vehicle_view.map(catalog =>
-                        <li key={`id_${catalog.id}`}>{catalog.value}</li>
+                {data?.getCatalogsQueryFunction && data?.getCatalogsQueryFunction.map(catalogs =>
+                    catalogs && catalogs.vehicle_view && catalogs.vehicle_view.map(catalog =>
+                        catalog && <li key={`id_${catalog.id}`}>{catalog.value}</li>
                     )
                 )}
             </ul>
